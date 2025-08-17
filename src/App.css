@@ -1,0 +1,53 @@
+
+.app-header {
+  background: rgba(0, 21, 41, 0.95);
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+  display: flex;
+}
+
+.jump {
+  display: inline-block;
+  animation: jump 0.6s infinite;
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.menu-toggle-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-toggle-icon:hover {
+  transform: scale(1.2);
+  color: #1890ff;
+}
+
+
+
+
+

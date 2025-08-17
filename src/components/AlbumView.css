@@ -1,0 +1,266 @@
+
+/* Container principal */
+.album-container {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+  overflow: visible;
+}
+
+.album-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 0px 0 120px;
+  margin-top: -40px;
+  scroll-padding-left: 0%;
+}
+
+.album-wrapper {
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.album-motion-card {
+
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.album-card {
+  width: 180px;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.album-card.active {
+  border: 1px solid #1890ff;
+  box-shadow: 0 4px 15px rgba(24,144,255,0.6);
+}
+
+.album-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 8px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.album-favorite-button {
+  position: absolute !important;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px !important;
+  padding: 0 !important;
+  cursor: pointer;
+  user-select: none;
+  background: transparent !important;
+  border: none !important;
+  transition: color 0.3s ease;
+  color: gray;
+}
+
+.album-favorite-button:hover {
+  color: #ff4d4f !important;
+}
+
+
+.album-favorite-button-ts {
+  position: absolute !important;
+  bottom: 14px;
+  right: 30px;
+  font-size: 20px !important;
+  padding: 0 !important;
+  cursor: pointer;
+  user-select: none;
+  background: transparent !important;
+  border: none !important;
+  transition: color 0.3s ease;
+  color: gray;
+}
+
+.album-favorite-button-ts:hover {
+  color: #ff4d4f !important;
+}
+
+
+/* Textos */
+.album-name {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  font-size: 12px;
+  color: #888;
+}
+
+.footer-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 21, 41, 0.95);
+  padding: 20px 24px;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Player: imagem + info */
+.now-playing {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  margin-top: -5px;
+}
+
+.now-playing-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.now-playing-info {
+  flex: 1;
+   color: #cdcdcd;
+}
+
+.now-playing-info h3 {
+  margin: 0 0 2px 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+}
+
+.avatar-border {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #1890ff; /* azul claro */
+  z-index: 1;
+  animation: spin 2s linear infinite, pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(0, 42, 255, 0.568);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.icone-todas-musicas {
+  animation: strongShake 0.6s infinite;
+  transform-origin: center;
+}
+
+@keyframes strongShake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.icone-favoritos {
+  animation: heartFillPulse 1.2s infinite;
+  color: black;
+}
+
+@keyframes heartFillPulse {
+  0% {
+    transform: scale(1);
+    color: black;
+  }
+  50% {
+    transform: scale(1.3);
+    color: red;
+  }
+  100% {
+    transform: scale(1);
+    color: black;
+  }
+}
+
+/* Barra de progresso */
+.progress-bar {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #1890ff;
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 6px;
+}
+
+/* Botões de controle */
+.player-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+
+.player-footer-signature {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  user-select: none;
+  cursor: default;
+}
+
+.player-footer-signature:hover {
+  color: #fff;
+  text-shadow: 0 0 2px #1890ff;
+}
